@@ -1,20 +1,137 @@
-심플하면서도 세련된 디자인의 초대장을 하나의 HTML 파일로 제작해 보았습니다. Tailwind CSS를 사용하여 반응형 레이아웃을 구현했고, 초대장 특유의 우아한 분위기를 살리기 위해 구글 폰트와 부드러운 애니메이션 효과를 추가했습니다.
+초대장을 세련되고 깔끔한 디자인의 **HTML 파일 형식**으로 만들어 보았습니다. 이 코드를 복사하여 메모장에 붙여넣은 뒤, 확장자를 `.html`로 저장하면 브라우저에서 바로 확인할 수 있습니다.
 
-이 파일은 브라우저에서 바로 열어 확인하실 수 있으며, 텍스트와 이미지 경로만 수정하여 바로 사용 가능합니다.
+---
 
+### 💌 모바일 최적화 초대장 코드
 
-http://googleusercontent.com/immersive_entry_chip/0
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소중한 분들을 초대합니다</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .invitation-card {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 450px;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .header {
+            font-size: 1.2rem;
+            color: #888;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin: 10px 0;
+            font-family: 'Georgia', serif;
+        }
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 20px auto;
+        }
+        .content {
+            line-height: 1.8;
+            margin: 30px 0;
+            font-size: 1.05rem;
+        }
+        .info-box {
+            background-color: #fcfcfc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .info-item {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .label {
+            font-weight: bold;
+            color: #d4af37;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
 
-### 주요 특징:
-1.  **단일 파일 구조**: HTML, CSS(Tailwind), JavaScript가 모두 한 파일에 포함되어 있어 공유가 매우 쉽습니다.
-2.  **반응형 디자인**: 모바일 기기에 최적화되어 있으며, 데스크탑에서도 깔끔하게 보입니다.
-3.  **세련된 폰트**: 'Playfair Display' 세리프 폰트를 사용하여 고급스러운 분위기를 연출했습니다.
-4.  **인터랙티브 요소**: 
-    * **RSVP 모달**: 손님들이 참석 여부를 전달할 수 있는 팝업 폼을 구현했습니다.
-    * **스크롤 애니메이션**: 페이지를 내릴 때 섹션들이 부드럽게 나타나는 효과를 추가했습니다.
-    * **이미지**: Unsplash의 고해상도 샘플 이미지를 사용했으며, 필요시 본인의 사진 URL로 교체할 수 있습니다.
+    <div class="invitation-card">
+        <div class="header">INVITATION</div>
+        <h1 class="title">초대합니다</h1>
+        <div class="divider"></div>
+        
+        <div class="content">
+            함께하면 즐거운 시간이 될 것 같습니다.<br>
+            귀한 걸음 하시어 자리를 빛내주시면<br>
+            더 없는 기쁨으로 맞이하겠습니다.
+        </div>
 
-### 수정 방법:
-* `<img>` 태그의 `src` 주소를 본인의 웨딩 사진이나 파티 사진 URL로 바꾸세요.
-* 텍스트 내용(이름, 날짜, 장소 등)을 본인의 상황에 맞춰 수정하시면 됩니다.
-* 지도는 현재 플레이스홀더 상태이며, 구글 지도나 네이버 지도의 '공유하기 -> HTML 퍼가기' 코드를 해당 섹션에 넣으면 실제 지도가 표시됩니다.
+        <div class="info-box">
+            <div class="info-item">
+                <span class="label">일시</span>
+                <span>2026년 5월 23일 (토) 오후 2시</span>
+            </div>
+            <div class="info-item">
+                <span class="label">장소</span>
+                <span>서울 가든 호텔 2층 연회장</span>
+            </div>
+            <div class="info-item">
+                <span class="label">문의</span>
+                <span>010-1234-5678</span>
+            </div>
+        </div>
+
+        <a href="#" class="btn" onclick="alert('지도가 곧 연결됩니다!')">오시는 길 확인</a>
+    </div>
+
+</body>
+</html>
+```
+
+---
+
+### 💡 사용 방법
+1. 위 코드를 복사하세요.
+2. **메모장**(Windows)이나 **텍스트 편집기**(Mac)를 엽니다.
+3. 코드를 붙여넣은 뒤, 파일을 저장할 때 이름을 `invitation.html`로 설정합니다.
+4. 저장된 파일을 더블 클릭하면 웹 브라우저에서 예쁜 초대장이 열립니다.
+
+**수정 팁:**
+* **내용 변경:** `<div class="content">` 안의 텍스트나 `.info-item` 안의 날짜/장소를 본인의 상황에 맞게 수정하세요.
+* **색상 변경:** `.divider`나 `.label`의 색상 코드(`#d4af37`, 금색)를 원하는 색으로 바꾸면 분위기가 달라집니다.
+
+혹시 특정 목적(결혼식, 생일 파티, 비즈니스 행사 등)이 있으시다면, 그에 맞춰 디자인이나 문구를 더 구체적으로 다듬어 드릴 수 있습니다. 어떤 목적의 초대장인가요?
